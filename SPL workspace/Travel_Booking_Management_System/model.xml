@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<featureModel>
+	<properties>
+		<graphics key="autolayoutconstraints" value="false"/>
+		<graphics key="legendautolayout" value="true"/>
+		<graphics key="showconstraints" value="true"/>
+		<graphics key="showshortnames" value="false"/>
+		<graphics key="layout" value="horizontal"/>
+		<graphics key="showcollapsedconstraints" value="true"/>
+		<graphics key="legendhidden" value="false"/>
+		<graphics key="layoutalgorithm" value="1"/>
+	</properties>
+	<struct>
+		<and abstract="true" mandatory="true" name="Travel_Booking_Management_System">
+			<graphics key="collapsed" value="false"/>
+			<and abstract="true" name="UserManagement">
+				<graphics key="collapsed" value="false"/>
+				<feature name="UserRegistration">
+					<description>User Registration using Email address and Password</description>
+				</feature>
+				<feature name="UserLogin">
+					<description>User Login with registered EmailID</description>
+				</feature>
+			</and>
+			<or abstract="true" name="SearchingServices">
+				<graphics key="collapsed" value="true"/>
+				<feature name="SearchForFlights">
+					<description>Searching cheap flights from Source to Destination.</description>
+				</feature>
+				<feature name="SearchForHotels">
+					<description>Searching for stays both for Source or Destination place</description>
+				</feature>
+				<feature name="SearchForLocalCarRental">
+					<description>Search for cheap car rentals for one or two days stay</description>
+				</feature>
+				<feature name="SearchForTravelPackage">
+					<description>This includes whole reliable travel package including Car rental</description>
+				</feature>
+			</or>
+			<alt abstract="true" name="Booking">
+				<graphics key="collapsed" value="true"/>
+				<feature abstract="true" name="BookFlight">
+					<description>Booking Flights</description>
+				</feature>
+				<feature abstract="true" name="BookHotel">
+					<description>Booking Hotels with Check in and Check out</description>
+				</feature>
+				<feature abstract="true" name="BookCar">
+					<description>Booking local car rental service</description>
+				</feature>
+			</alt>
+			<and abstract="true" name="Confirmation">
+				<graphics key="collapsed" value="false"/>
+				<feature abstract="true" mandatory="true" name="PaymentProcessingUsingGateway">
+					<description>Payment being done by user at this step.</description>
+				</feature>
+				<feature abstract="true" mandatory="true" name="ConfirmationEmail">
+					<description>After the payment, a confirmation email should be generated and being send it to the User.</description>
+				</feature>
+			</and>
+			<or abstract="true" name="ViewDetails">
+				<graphics key="collapsed" value="false"/>
+				<feature name="ViewFlightDetails">
+					<description>View flight details after booking.</description>
+				</feature>
+				<feature name="ViewHotelDetails">
+					<description>Viewing Hotel details after booking done.</description>
+				</feature>
+				<feature abstract="true" name="ViewCars">
+					<description>Viewing Car details after booking done.</description>
+				</feature>
+			</or>
+			<and abstract="true" name="BookingManagement">
+				<graphics key="collapsed" value="true"/>
+				<feature abstract="true" name="CancelBooking">
+					<description>In case user wants to cancel the booking of Flight, Hotel or Cars.</description>
+				</feature>
+				<feature abstract="true" name="ChangeBookingDetails">
+					<description>If user wants to change some booking details such as PassengerName, Address or Payment Method for future transactions.</description>
+				</feature>
+			</and>
+		</and>
+	</struct>
+	<constraints>
+		<rule>
+			<imp>
+				<var>UserManagement</var>
+				<var>SearchingServices</var>
+			</imp>
+		</rule>
+	</constraints>
+</featureModel>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<configuration>
+	<feature automatic="selected" name="Travel_Booking_Management_System"/>
+	<feature automatic="selected" manual="selected" name="UserManagement"/>
+	<feature manual="selected" name="UserRegistration"/>
+	<feature manual="selected" name="UserLogin"/>
+	<feature automatic="selected" name="SearchingServices"/>
+	<feature manual="selected" name="SearchForFlights"/>
+	<feature name="SearchForHotels"/>
+	<feature name="SearchForLocalCarRental"/>
+	<feature name="SearchForTravelPackage"/>
+	<feature automatic="selected" manual="selected" name="Booking"/>
+	<feature manual="selected" name="BookFlight"/>
+	<feature automatic="unselected" name="BookHotel"/>
+	<feature automatic="unselected" name="BookCar"/>
+	<feature manual="selected" name="Confirmation"/>
+	<feature automatic="selected" name="PaymentProcessingUsingGateway"/>
+	<feature automatic="selected" name="ConfirmationEmail"/>
+	<feature automatic="selected" manual="selected" name="ViewDetails"/>
+	<feature manual="selected" name="ViewFlightDetails"/>
+	<feature name="ViewHotelDetails"/>
+	<feature name="ViewCars"/>
+	<feature automatic="selected" manual="selected" name="BookingManagement"/>
+	<feature name="CancelBooking"/>
+	<feature manual="selected" name="ChangeBookingDetails"/>
+</configuration>
